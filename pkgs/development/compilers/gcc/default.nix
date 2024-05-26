@@ -468,7 +468,7 @@ pipe ((callFile ./common/builder.nix {}) ({
 }
 ))
 ([
-  (callPackage ./common/libgcc.nix   { inherit version langC langCC langJit targetPlatform hostPlatform withoutTargetLibc enableShared libcCross; })
+  (callPackage ./common/libgcc.nix   { inherit stdenv version langC langCC langJit targetPlatform hostPlatform withoutTargetLibc enableShared libcCross; })
 ] ++ optionals atLeast11 [
   (callPackage ./common/checksum.nix { inherit langC langCC; })
 ])
